@@ -42,15 +42,15 @@ In the delegated pane, start Treehouse first:
 herdr pane run <pane-id> "treehouse"
 ```
 
-Wait until the pane output shows that Treehouse entered a worktree, then start the requested agent in that same pane. Prefer `herdr agent start` when starting a supported coding agent, because Herdr can then track the agent lifecycle:
+Wait until the pane output shows that Treehouse entered a worktree, then start the requested agent in that same pane with `herdr pane run`:
 
 ```bash
-herdr agent start <agent-name> --kind codex --pane <pane-id>
+herdr pane run <pane-id> "codex"
 ```
 
-Use the agent kind requested by the user. If no kind is specified, use the local default implied by the surrounding request and available Herdr agent kinds.
+Use the agent command requested by the user. If no command is specified, use the local default implied by the surrounding request and available Herdr agent integrations.
 
-After the agent is ready, send the delegated task with `herdr agent prompt`.
+After Herdr detects the agent as ready, send the delegated task with the installed `herdr agent` input command, such as `herdr agent send <pane-id> <text>` when that is the supported command in the local CLI.
 
 ## Boundaries
 
